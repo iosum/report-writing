@@ -1,0 +1,8 @@
+﻿## Displaying the Available Print Services
+
+```java
+PrintService[] services = PrintServiceLookup.lookupPrintServices(null, null);  
+for (int i = 0; i < services.length; i++) {  
+	System.out.println(services[i].getName());  
+}
+```
