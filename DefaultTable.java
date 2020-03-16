@@ -77,6 +77,8 @@ public class DefaultTable extends JFrame{
         JTable table = new JTable(defaultTableModel);
         table.setRowHeight(table.getRowHeight() + 10);
 
+
+
         // Allows the user to sort the data
         table.setAutoCreateRowSorter(true);
 
@@ -90,7 +92,7 @@ public class DefaultTable extends JFrame{
         JButton printButton = new JButton("print");
         printButton.addActionListener(e -> {
             MessageFormat header = new MessageFormat("Page Header");
-            MessageFormat footer = new MessageFormat("Page (1, number, integer)");
+            MessageFormat footer = new MessageFormat("Page {0}");
             try {
                 table.print(JTable.PrintMode.FIT_WIDTH, header, footer);
             } catch (PrinterException ex) {
